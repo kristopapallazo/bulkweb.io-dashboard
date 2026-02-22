@@ -55,7 +55,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     base: "/", // good for Vercel
     build: {
-      outDir: "build", // or "dist", but be consistent with Vercel settings
+      outDir: "dist",
       rollupOptions: {
         output: {
           manualChunks(id) {
