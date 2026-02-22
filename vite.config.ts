@@ -47,9 +47,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     define: {
-      // Polyfill process for libraries that reference process.env / process.version in the browser
       global: "globalThis",
-      "process.env": JSON.stringify({ NODE_ENV: mode }),
+      "process.env.NODE_ENV": JSON.stringify(mode),
       "process.version": JSON.stringify(""),
       "import.meta.env.GOOGLE_MAPS_API_KEY": JSON.stringify(
         env.GOOGLE_MAPS_API_KEY
