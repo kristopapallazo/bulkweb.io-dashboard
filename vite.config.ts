@@ -64,8 +64,16 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks(id) {
             if (id.includes("TempStaticData")) return "templates-data";
-            if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) return "vendor";
-            if (id.includes("node_modules/antd") || id.includes("node_modules/@ant-design")) return "antd";
+            // Keep React + antd together so antd can always access React.version
+            if (
+              id.includes("node_modules/react/") ||
+              id.includes("node_modules/react-dom/") ||
+              id.includes("node_modules/antd") ||
+              id.includes("node_modules/@ant-design") ||
+              id.includes("node_modules/rc-") ||
+              id.includes("node_modules/@rc-component")
+            )
+              return "vendor-react";
             if (id.includes("node_modules/@reduxjs") || id.includes("node_modules/react-redux")) return "redux";
             if (id.includes("node_modules/react-router")) return "router";
             if (id.includes("node_modules/i18next") || id.includes("node_modules/react-i18next")) return "i18n";
