@@ -1,5 +1,6 @@
-import { FC, ReactNode, lazy } from "react";
+import { FC, ReactNode, lazy, Suspense } from "react";
 import { createBrowserRouter, RouteObject, RouterProvider } from "react-router";
+import { Spin } from "antd";
 
 /* Optimized Comp */
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
@@ -43,6 +44,7 @@ const MyWebsitePage = lazy(
 );
 
 const HistoryPage = lazy(() => import("../pages/HIstoryPage/HistoryPage"));
+const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage"));
 
 interface RouterProviderProps {
   children?: ReactNode;
@@ -93,6 +95,7 @@ const routeConfigs: RouteObject[] = [
   // { path: "create-product", Component: CreateProductPage },
   // { path: "create-bulk", Component: CreateBulkPage },
   { path: "contact", Component: ContactPage },
+  { path: "*", Component: NotFoundPage },
 ];
 
 const router = createBrowserRouter([
@@ -104,7 +107,24 @@ const router = createBrowserRouter([
 ]);
 
 const RouterProviderComp: FC<RouterProviderProps> = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense
+      fallback={
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <Spin size="large" />
+        </div>
+      }
+    >
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 };
 
 export default RouterProviderComp;

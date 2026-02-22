@@ -14,6 +14,8 @@ const LogoRow = () => {
 };
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <Layout.Footer className={classes.mainFooter}>
       <LogoRow />
@@ -21,6 +23,11 @@ const Footer = () => {
       <FooterLinksSection />
       <hr />
       <SocialMediaSection />
+      <hr />
+      <div className={classes.lastRow}>
+        <span>© {year} BulkWeb.io — All rights reserved.</span>
+        <span>Built with ❤️ for scaling the web.</span>
+      </div>
     </Layout.Footer>
   );
 };

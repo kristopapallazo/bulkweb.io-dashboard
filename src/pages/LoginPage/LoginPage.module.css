@@ -1,20 +1,13 @@
 .container {
   height: 100%;
-  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
     135deg,
     var(--primary-green),
-    var(--accent-color)
+    var(--dark-green)
   );
   position: relative;
 }
-.test {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  background-color: var(--accent-color);
-  padding: 5px;
-}
+

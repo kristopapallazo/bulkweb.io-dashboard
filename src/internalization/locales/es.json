@@ -1,3 +1,17 @@
 {
-  "welcome": "spanish"
+  "welcome": "\u00a1Bienvenido a nuestra aplicaci\u00f3n!",
+  "greeting": "\u00a1Hola, {{name}}!",
+  "Create web": "Crear Sitio Web",
+  "My websites": "Mis Sitios Web",
+  "Pricing": "Precios",
+  "Contact": "Contacto",
+  "About": "Acerca de",
+  "Login": "Iniciar Sesi\u00f3n",
+  "Profile": "Perfil",
+  "Buy Credits": "Comprar Cr\u00e9ditos",
+  "Back to Home": "Volver al Inicio",
+  "Domain Setup": "Configurar Dominio",
+  "Templates": "Plantillas",
+  "Hosting": "Alojamiento",
+  "History": "Historial"
 }

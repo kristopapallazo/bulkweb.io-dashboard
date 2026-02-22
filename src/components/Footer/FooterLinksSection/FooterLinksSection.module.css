@@ -1,12 +1,9 @@
 .footerLinksSection {
-  background-color: var(--accent-color); /* dark slate */
-  color: #f9fafb;
-  padding: 3rem 2rem;
+  color: var(--dark-text);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 2rem;
-  border-radius: 10px;
 }
 
 .column {
@@ -16,10 +13,12 @@
 }
 
 .title {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   margin-bottom: 1rem;
-  color: #fbbf24; /* amber-400 */
+  color: var(--primary-color); /* amber */
 }
 
 .list {
@@ -30,10 +29,11 @@
 
 .item {
   margin-bottom: 0.5rem;
-  color: #d1d5db; /* cool gray-300 */
-  font-size: 0.95rem;
+  color: var(--dark-text);
+  font-size: 0.875rem;
   cursor: pointer;
   transition: color 0.2s ease;
+  font-style: normal;
 }
 
 .item:hover {

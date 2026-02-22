@@ -41,7 +41,7 @@ const SocialMedia = () => {
   ));
   return (
     <div className={classes.socialMedia}>
-      <span color="red">Follow us</span>
+      <span className={classes.followLabel}>Follow us</span>
       <div className={classes.iconsContainer}>{items}</div>
     </div>
   );

@@ -49,4 +49,4 @@ interface LocalStorageLoginItemDict {
 
 type PaymentMethod = "card" | "bank" | "cripto";
 
-type Lang = "GB_ENG" | "AL" | "IT";
+type Lang = "GB_ENG" | "ES" | "IT";

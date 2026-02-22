@@ -1,4 +1,17 @@
 {
   "welcome": "Welcome to our application!",
-  "greeting": "Hello, {{name}}!"
+  "greeting": "Hello, {{name}}!",
+  "Create web": "Create Website",
+  "My websites": "My Websites",
+  "Pricing": "Pricing",
+  "Contact": "Contact",
+  "About": "About",
+  "Login": "Login",
+  "Profile": "Profile",
+  "Buy Credits": "Buy Credits",
+  "Back to Home": "Back to Home",
+  "Domain Setup": "Domain Setup",
+  "Templates": "Templates",
+  "Hosting": "Hosting",
+  "History": "History"
 }

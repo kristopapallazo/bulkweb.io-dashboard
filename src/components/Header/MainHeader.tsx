@@ -2,7 +2,6 @@ import { Header } from "antd/es/layout/layout";
 import MainMenu from "../Menu/MainMenu/MainMenu";
 
 import classes from "./MainHeader.module.css";
-// import TranslatedButton from "../UI/AntD/Buttons/TranslatedBttn";
 import Logo from "../Atoms/Logo/Logo";
 import { RootStoreState } from "../../redux";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,24 +12,34 @@ import { Dropdown } from "antd";
 import { FC } from "react";
 import Flag, { FlagProps } from "react-world-flags";
 import { setLang } from "../../redux/Slices/UserSlice";
+import i18n from "../../internalization/internalization";
+
+const LANG_TO_I18N: Record<Lang, string> = {
+  GB_ENG: "en",
+  ES: "es",
+  IT: "en", // Italian not yet translated, falls back to English
+};
 
 const FlagIcon: FC<FlagProps> = (props) => {
-  const { code = "AL", width = 30 } = props;
+  const { code = "GB_ENG", width = 30 } = props;
   return <Flag code={code} width={width} />;
 };
 
 const items: MenuProps["items"] = [
   {
-    key: "AL",
-    icon: <FlagIcon />,
-  },
-  {
     key: "GB_ENG",
     icon: <FlagIcon code="GB_ENG" />,
+    label: "English",
+  },
+  {
+    key: "ES",
+    icon: <FlagIcon code="ES" />,
+    label: "Español",
   },
   {
     key: "IT",
     icon: <FlagIcon code="IT" />,
+    label: "Italiano",
   },
 ];
 
@@ -45,7 +54,9 @@ const FlagDropdown = () => {
         selectable: true,
         selectedKeys: [lang],
         onClick: ({ key }) => {
-          dispatch(setLang(key as Lang));
+          const newLang = key as Lang;
+          dispatch(setLang(newLang));
+          i18n.changeLanguage(LANG_TO_I18N[newLang]);
         },
       }}
     >

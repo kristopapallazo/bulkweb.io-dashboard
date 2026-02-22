@@ -15,7 +15,8 @@ const HomePage = () => {
     <div className={classes.home}>
       <div className={classes.overlay}>
         <h1 className={classes.title}>
-          <span>Effortless Website Creation</span> <div>at Scale</div>
+          <span>Effortless Website Creation</span>{" "}
+          <span className={classes.titleAccent}>at Scale</span>
         </h1>
         <p className={classes.subtitle}>
           Create, customize, and launch stunning websites with just a few clicks

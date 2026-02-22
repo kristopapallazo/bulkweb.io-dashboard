@@ -34,14 +34,18 @@
 }
 
 .title {
-  font-family: "Roboto", sans-serif;
   font-size: 4rem;
-  font-weight: 600;
-  color: #2c5f34; /* or your preferred color */
+  font-weight: 700;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 20px;
   line-height: 1.2;
+}
+
+.titleAccent {
+  display: block;
+  color: var(--primary-color);
 }
 
 .subtitle {

@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  color: var(--sec-text);
   padding: 10px;
-  border: 2px double gray;
-  box-shadow: 0px -2px 15px 0px inset gray;
+  border: 2px solid var(--divider-color);
+  box-shadow: var(--shadow-md);
   border-radius: 16px;
   width: 60%;
   height: 400px;

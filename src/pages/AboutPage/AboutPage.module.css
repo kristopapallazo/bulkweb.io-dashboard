@@ -1,10 +1,6 @@
 .aboutPage {
   position: relative;
-  background: linear-gradient(
-    to bottom,
-    var(--light-primary),
-    var(--accent-color)
-  );
+  background-color: var(--bg-base);
 }
 .content {
   position: relative;

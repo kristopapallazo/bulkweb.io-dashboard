@@ -1,31 +1,12 @@
 .logo {
-  text-shadow: 2px 2px 5px var(--accent-color);
-  color: var(--primary-color);
+  color: var(--primary-green);
   font-weight: 900;
   margin: 0 10px;
-  font-size: 15px;
-  position: relative;
-  z-index: 1;
-  overflow: visible;
-  display: inline-block;
+  font-size: 16px;
   cursor: pointer;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
 }
-.logo::before {
-  content: "";
-  width: 120%;
-  aspect-ratio: 1/0.4;
-  border-radius: 50% 40%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* border: 2px solid var(--sec-text); */
-
-  background: linear-gradient(
-    to right,
-    var(--accent-color) 0%,
-    var(--accent-color) 60%,
-    /* var(--primary-color) 50%, */ var(--primary-color) 100%
-  );
-  z-index: -1;
+.logo:hover {
+  color: var(--dark-green);
 }

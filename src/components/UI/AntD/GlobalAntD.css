@@ -20,7 +20,7 @@
 }
 /* Todo: change the color later */
 .ant-layout-sider-trigger:hover {
-  background-color: var(--divider-color) !important;
+  background-color: var(--light-green) !important;
 }
 .ant-input-group-addon {
   background-color: white !important;

@@ -1,9 +1,10 @@
 import { FC } from "react";
+import classes from "./ContactTitle.module.css";
 
 const ContactTitle = () => {
   return (
-    <header /* className={classes.title} */>
-      <h1>Contact Us</h1>
+    <header className={classes.sectionHeader}>
+      <h1 className={classes.sectionTitle}>Contact Us</h1>
     </header>
   );
 };
@@ -16,8 +17,8 @@ interface MainTitleProps {
 
 export const MainTitle: FC<MainTitleProps> = ({ label = "Contact Us" }) => {
   return (
-    <header style={{ textAlign: "center" }} /* className={classes.title} */>
-      <h1>{label}</h1>
+    <header className={classes.sectionHeader}>
+      <h1 className={classes.sectionTitle}>{label}</h1>
     </header>
   );
 };

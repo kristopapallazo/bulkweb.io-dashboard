@@ -8,7 +8,7 @@ interface DomainPageCtxProps {
 }
 const ctxDefaultVal = {
   domainMode: DOMAIN_MODES[0],
-  setDomainMode: () => {},
+  setDomainMode: () => { },
 };
 
 const WebsiteFlowContext = createContext<DomainPageCtxProps>(ctxDefaultVal);
@@ -25,7 +25,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const TemplatePageCtxProvider = ({ children }: Props) => {
+export const DomainPageCtxProvider = ({ children }: Props) => {
   const [domainMode, setDomainMode] = useState<DomainMode>(DOMAIN_MODES[0]);
 
   const defaultVal = { domainMode, setDomainMode };

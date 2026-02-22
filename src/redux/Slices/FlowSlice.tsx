@@ -77,8 +77,6 @@ const flowSlice = createSlice({
 
     setTemplate: (state, action: PayloadAction<TemplateId | null>) => {
       const val = action.payload;
-      console.log("val :>> ", val);
-
       if (val !== null) {
         state.template = val;
         state.selectedTemplates = [val];

@@ -39,9 +39,7 @@ const templatesSlice = createSlice({
     },
     updateFavorites: (state, action: PayloadAction<TemplateAllIds>) => {
       const updatedFavorites = action.payload;
-      console.log("updatedFavorites :>> ", updatedFavorites);
       state.favorites = updatedFavorites;
-      console.log("state.favorites :>> ", state.favorites);
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     },
     addMyTemplates: (state, action: PayloadAction<number>) => {
@@ -58,7 +56,7 @@ const templatesSlice = createSlice({
     },
     updateMyTemplates: (state, action: PayloadAction<TemplateAllIds>) => {
       const updatedFavorites = action.payload;
-      state.favorites = updatedFavorites;
+      state.myTemplates = updatedFavorites;
       localStorage.setItem("myTemplates", JSON.stringify(updatedFavorites));
     },
   },

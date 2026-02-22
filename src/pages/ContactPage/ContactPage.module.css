@@ -5,16 +5,10 @@
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  /* will-change: background-image;
-  background-image: url("../../assets/green-bckg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; */
   background: linear-gradient(
     135deg,
     var(--primary-green),
-    var(--accent-color)
+    var(--dark-green)
   );
   position: relative;
-  /* isolation: isolate; */
 }

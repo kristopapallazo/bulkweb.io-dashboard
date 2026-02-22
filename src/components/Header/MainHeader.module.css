@@ -14,14 +14,14 @@ It is FIXED-PIXEL and this can brake the website layout.
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  /* background-color: #282c34; */
-  /* color: white; */
-  box-shadow: 2px 2px 5px -2px var(--primary-color);
+  padding: 0 1.5rem;
+  background-color: var(--bg-surface);
+  border-bottom: 2px solid var(--primary-green);
+  box-shadow: var(--shadow-sm);
   flex-shrink: 0;
   height: 64px; /* ***WARNING: DONT CHANGE WITHOUT CAREFULLY OBSERVING THE WARNING IN TOP */
   max-height: 64px; /* ***WARNING: DONT CHANGE WITHOUT CAREFULLY OBSERVING THE WARNING IN TOP */
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 100;
 }

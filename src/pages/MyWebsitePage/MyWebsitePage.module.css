@@ -1,10 +1,6 @@
 .container {
   padding: 2rem;
-  background: linear-gradient(
-    to bottom,
-    var(--light-primary),
-    var(--accent-color)
-  );
+  background-color: var(--bg-base);
   min-height: 100vh;
 }
 
@@ -23,12 +19,12 @@
 }
 
 .card {
-  background-color: white;
+  background-color: var(--bg-surface);
   border: 1px solid var(--divider-color);
-  border-left: 5px solid var(--accent-color);
+  border-left: 5px solid var(--primary-green);
   border-radius: 0.5rem;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
   transition: border-color 0.3s ease;
 }
 
@@ -37,7 +33,7 @@
 }
 
 .card h2 {
-  color: var(--accent-color);
+  color: var(--primary-green);
   margin-top: 0;
 }
 

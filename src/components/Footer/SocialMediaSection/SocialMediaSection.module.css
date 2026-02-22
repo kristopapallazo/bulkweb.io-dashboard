@@ -2,27 +2,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 5px;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  color: var(--dark-muted);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .socialMedia {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  row-gap: 0.8rem;
-  border-right: 2px solid var(--sec-text);
-  border-left: 2px solid var(--sec-text);
-  padding: 0 10px;
+  gap: 1rem;
+}
+
+.followLabel {
+  color: var(--dark-muted);
+  font-size: 0.875rem;
 }
 
 .iconsContainer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  column-gap: 5px;
+  column-gap: 0.75rem;
 }
-.socialLink,
+
+.socialLink {
+  color: var(--dark-text);
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
+}
 .socialLink:hover {
-  color: red;
+  color: var(--primary-color);
 }

@@ -56,6 +56,20 @@ export default defineConfig(({ mode }) => {
     base: "/", // good for Vercel
     build: {
       outDir: "build", // or "dist", but be consistent with Vercel settings
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("TempStaticData")) return "templates-data";
+            if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) return "vendor";
+            if (id.includes("node_modules/antd") || id.includes("node_modules/@ant-design")) return "antd";
+            if (id.includes("node_modules/@reduxjs") || id.includes("node_modules/react-redux")) return "redux";
+            if (id.includes("node_modules/react-router")) return "router";
+            if (id.includes("node_modules/i18next") || id.includes("node_modules/react-i18next")) return "i18n";
+            if (id.includes("node_modules/@react-google-maps") || id.includes("node_modules/@vis.gl")) return "maps";
+            if (id.includes("node_modules/lodash")) return "lodash";
+          },
+        },
+      },
     },
   };
 });

@@ -3,13 +3,11 @@ import { IoBusinessSharp } from "react-icons/io5";
 import { GrTemplate } from "react-icons/gr";
 import { GiPriceTag } from "react-icons/gi";
 import MenuItem from "../MenuItem";
-import { FC, useEffect, useState } from "react";
+import { FC, useMemo } from "react";
 import { IoIosContact } from "react-icons/io";
 import { MenuItemAntd } from "../../../declarations/antD";
 import { RootStoreState } from "../../../redux";
 import { useSelector } from "react-redux";
-
-// import classes from "./MainMenu.module.css";
 
 interface ItemProps {
   id: string;
@@ -18,15 +16,10 @@ interface ItemProps {
 }
 
 const LoginMenuItem: FC<ItemProps> = ({ id }) => {
-  /* Todo: define user */
-  const properId = id;
-  const label = "";
-
-  // return <span>{user ? user.name : t("Login")}</span>;
-  return <MenuItem id={properId} label={label} />;
+  return <MenuItem id={id} label="" />;
 };
 
-const items: MenuItemAntd[] = [
+const baseItems: MenuItemAntd[] = [
   {
     key: "template",
     label: <MenuItem id="template" label="Create web" />,
@@ -35,7 +28,7 @@ const items: MenuItemAntd[] = [
   },
   {
     key: "my-websites",
-    label: <MenuItem id="my-websites" label="my websites" />,
+    label: <MenuItem id="my-websites" label="My websites" />,
     icon: <GiPriceTag />,
     disabled: true,
   },
@@ -63,18 +56,11 @@ const items: MenuItemAntd[] = [
 ];
 
 const MainMenu = () => {
-  const [menuItems, setMenuItems] = useState<MenuItemAntd>(items);
-
   const isLogged = useSelector((state: RootStoreState) => state.user.user);
-  console.log("isLogged :>> ", isLogged);
-  useEffect(() => {
-    if (isLogged) {
-      const loggedInItems = menuItems.map((item: MenuItemAntd) => ({
-        ...item,
-        disabled: false,
-      }));
-      setMenuItems(loggedInItems);
-    }
+
+  const menuItems = useMemo(() => {
+    if (!isLogged) return baseItems;
+    return baseItems.map((item) => ({ ...item, disabled: false }));
   }, [isLogged]);
 
   return (

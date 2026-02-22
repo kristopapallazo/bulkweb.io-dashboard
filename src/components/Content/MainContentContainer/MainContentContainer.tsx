@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
 import Footer from "../../Footer/Footer";
 import MainContent from "./MainContent/MainContent";
 import classes from "./MainContentContainer.module.css";
 import { useLocation } from "react-router";
 
-const MainContentContainer = () => {
-  const [showFooter, setShowFooter] = useState<boolean>(false);
+const FOOTER_PAGES = ["/", "/about", "/pricing", "/contact", "/login"];
 
+const MainContentContainer = () => {
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    if (["about"].some((path) => pathname.includes(path))) {
-      setShowFooter(true);
-    } else {
-      setShowFooter(false);
-    }
-  }, [pathname]);
+  const showFooter = FOOTER_PAGES.some(
+    (page) => pathname === page || pathname.endsWith(page)
+  );
 
   return (
     <div className={classes.mainContentContainer}>

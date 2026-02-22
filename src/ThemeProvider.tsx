@@ -14,26 +14,24 @@ interface ThemeProviderProps {
 // };
 const theme: ThemeConfig = {
   token: {
-    colorPrimary: "#ffc107", // Primary Color
-    colorTextSecondary: "#757575", // Secondary Text Color
-    colorText: "#212121", // General Text Color
-    colorLink: "#ffa000", // Dark Primary Color (Links)
-    colorBorder: "#bdbdbd", // Divider Color
-    colorError: "#ffa000", // Accent Color
-    // colorError: "#795548", // Accent Color
-
-    colorBgContainer: "#fff",
-    // colorTextPrimary: "#212121", // Primary Text Color
-    // colorBackground: "#ffecb3", // Light Primary Color (Background)
-
-    // You can add more tokens here if needed
+    colorPrimary: "#2c5f34",       // Brand green – all primary interactions
+    colorTextSecondary: "#6b7280", // Muted secondary text
+    colorText: "#111827",          // Near-black body text
+    colorLink: "#2c5f34",          // Brand green links
+    colorBorder: "#e5e7eb",        // Light border
+    colorError: "#f5222d",         // Red for errors
+    colorBgContainer: "#ffffff",   // White surfaces
+    borderRadius: 8,
+    fontFamily:
+      "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   },
   components: {
-    // Sider: {
-    //   /* theme: "light" */
-    // },
+    Button: {
+      colorPrimary: "#2c5f34",
+      colorPrimaryHover: "#1e4426",
+      colorPrimaryActive: "#1e4426",
+    },
   },
-  // algorithm: theme.defaultAlgorithm,
 };
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {

@@ -185,8 +185,8 @@ const PricingPage: React.FC = () => {
                 borderColor: "var(--divider-color)",
               }}
               headStyle={{
-                backgroundColor: "var(--accent-color)",
-                color: "var(--primary-text)",
+                backgroundColor: "var(--primary-green)",
+                color: "#ffffff",
               }}
             >
               {/* <span>
@@ -203,9 +203,9 @@ const PricingPage: React.FC = () => {
                 icon={<DollarOutlined />}
                 onClick={() => handleBuy(pkg)}
                 style={{
-                  backgroundColor: "var(--accent-color)",
-                  borderColor: "var(--dark-green)",
-                  color: "#fff",
+                  backgroundColor: "var(--primary-color)",
+                  borderColor: "var(--dark-primary)",
+                  color: "#000",
                 }}
               >
                 Buy Now
